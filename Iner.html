@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siete | Maximalist Experience</title>
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://unpkg.com; img-src 'self' data: https:;">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+
+    <div class="custom-cursor" id="cursor"></div>
+
+    <header class="main-header">
+        <div class="brand">SIETE</div>
+        <img src="" alt="Descripción breve de la imagen">
+
+        <button class="chat-btn" aria-label="Abrir Chat">
+            <i class="ph ph-chat-teardrop-dots"></i> Iniciar Chat
+        </button>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+        <button class="toggle-btn" id="toggleSidebar" aria-label="Alternar Menú">
+            <i class="ph ph-list"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#art-1" class="nav-item"><i class="ph ph-planet"></i><span class="text">Génesis</span></a></li>
+            <li><a href="#art-2" class="nav-item"><i class="ph ph-aperture"></i><span class="text">Visión</span></a></li>
+            <li><a href="#art-3" class="nav-item"><i class="ph ph-flame"></i><span class="text">Impulso</span></a></li>
+            <li><a href="#art-4" class="nav-item"><i class="ph ph-drop"></i><span class="text">Fluidez</span></a></li>
+            <li><a href="#art-5" class="nav-item"><i class="ph ph-asterisk"></i><span class="text">Impacto</span></a></li>
+            <li><a href="#art-6" class="nav-item"><i class="ph ph-infinity"></i><span class="text">Legado</span></a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper">
+
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <div class="logo-wrapper">
+                    <img src="https://siete-fe.tgcloud.dev/_next/image?url=%2FLogoLg_3d_light.webp&w=256&q=75" alt="Siete Logo" id="heroLogo" class="hero-logo">
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <p>Descubre</p>
+                <i class="ph ph-arrow-down"></i>
+            </div>
+        </section>
+
+        <article id="art-1" class="section-maximalist">
+            <div class="bg-number" aria-hidden="true">1</div>
+            <div class="content-box reveal-up">
+                <h2>El Caos <br><span>Controlado</span></h2>
+                <p>La simetría es la estética de los cobardes. En Siete, rompemos la cuadrícula para encontrar el equilibrio en la tensión visual. Este es el primer paso hacia la disrupción total del estándar web.</p>
+                <div class="gradient-shape shape-pri-1"></div>
+            </div>
+        </article>
+
+        <article id="art-2" class="section-maximalist right-align">
+            <div class="bg-number" aria-hidden="true">2</div>
+            <div class="content-box reveal-up delay-1">
+                <h2 class="text-gradient-sec-1">Abraza el <br>Vacío</h2>
+                <p>El espacio negativo no es espacio perdido; es silencio estructurado. Contrastamos la densidad extrema de nuestros gradientes neón con tipografías clásicas que exigen atención y respeto.</p>
+            </div>
+        </article>
+
+        <article id="art-3" class="section-maximalist grid-breaker">
+            <div class="bg-number" aria-hidden="true">3</div>
+            <div class="gradient-shape shape-sec-2"></div>
+            <div class="content-box reveal-up">
+                <h2>Cromatismo <br>Extremo</h2>
+                <p>Naranja tóxico y magenta profundo. Nos negamos a usar paletas tímidas. Cada color es una declaración de intenciones, una agresión calculada a los sentidos.</p>
+            </div>
+        </article>
+
+        <article id="art-4" class="section-maximalist">
+            <div class="bg-number" aria-hidden="true">4</div>
+            <div class="content-box reveal-up delay-2">
+                <h2 class="text-gradient-sec-3">Fluidez <br>Dinámica</h2>
+                <p>El movimiento en el DOM no debe ser decorativo, debe contar una historia. Revelamos la información por capas, exigiendo al usuario que interactúe bajo nuestras reglas.</p>
+            </div>
+        </article>
+
+        <article id="art-5" class="section-maximalist right-align">
+            <div class="bg-number" aria-hidden="true">5</div>
+            <div class="gradient-shape shape-pri-2"></div>
+            <div class="content-box reveal-up">
+                <h2>Impacto <br>Brutalista</h2>
+                <p>Escalas desproporcionadas. Elementos superpuestos. La web ha sido domesticada; nosotros le devolvemos su estado salvaje, ruidoso e impredecible.</p>
+            </div>
+        </article>
+
+        <article id="art-6" class="section-maximalist footer-art">
+            <div class="bg-number" aria-hidden="true">6</div>
+            <div class="content-box reveal-up">
+                <h2>El Fin <br><span>Es el Inicio</span></h2>
+                <p>Siete no termina aquí. La lectura vertical infinita es solo un vehículo para la persistencia del pensamiento. Has llegado al límite de la página, pero no del concepto.</p>
+                <button class="cta-massive">Explorar Siete</button>
+            </div>
+        </article>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
