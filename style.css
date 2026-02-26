@@ -2,16 +2,24 @@
    VARIABLES & THEMING
    ========================================= */
 :root {
-    /* Paletas solicitadas */
-    --pri-g1: linear-gradient(135deg, #ff5872, #e91e64);
-    --pri-g2: linear-gradient(135deg, #851139, #2b0028);
-    --sec-g1: linear-gradient(135deg, #9100fb, #e91e64);
-    --sec-g2: linear-gradient(135deg, #f96000, #e91e64);
-    --sec-g3: linear-gradient(135deg, #095efb, #e91e64);
+    /* Paleta aproximada basada en el PDF (neón / maximalista) */
+    --color-primary: #FF5A7A; /* rosa/neón */
+    --color-primary-2: #E91E64; /* fucsia profundo */
+    --color-accent-purple: #8A00FF; /* púrpura brillante */
+    --color-accent-cyan: #06A0FF; /* cian brillante */
+    --color-accent-orange: #FF8A00; /* naranja vibrante */
+    --color-deep: #2B0028; /* fondo oscuro profundo */
+
+    /* Gradientes reutilizables */
+    --pri-g1: linear-gradient(135deg, var(--color-primary), var(--color-primary-2));
+    --pri-g2: linear-gradient(135deg, #5a082e, var(--color-deep));
+    --sec-g1: linear-gradient(135deg, var(--color-accent-purple), var(--color-primary-2));
+    --sec-g2: linear-gradient(135deg, var(--color-accent-orange), var(--color-primary-2));
+    --sec-g3: linear-gradient(135deg, var(--color-accent-cyan), var(--color-primary-2));
 
     /* Backgrounds and text */
     --bg-dark: #050002;
-    --text-main: #fcfcfc;
+    --text-main: #FCFCFC;
     
     /* Typography */
     --font-display: 'Unbounded', sans-serif;
@@ -85,13 +93,18 @@ body {
 }
 
 .brand {
-    font-family: var(--font-display);
-    font-size: 2.5rem;
-    font-weight: 900;
-    letter-spacing: -2px;
-    background: var(--sec-g2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-height: 75px;
+}
+
+.brand img {
+    display: block;
+    height: 56px;
+    width: auto;
+    max-width: 100%;
 }
 
 .chat-btn {
@@ -214,6 +227,28 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
+}
+
+/* Specific layout for art-7: center image and related content cleanly */
+#art-7 {
+    justify-content: center;
+    text-align: center;
+}
+
+.jago-image {
+    width: min(64%, 720px);
+    max-width: 100%;
+    z-index: 1;
+    display: block;
+    margin: 0 2vw 2vw 2vw;
+}
+
+.jago-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.65);
 }
 
 .section-maximalist.right-align {

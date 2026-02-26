@@ -9,17 +9,31 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- 1. Custom Cursor Logic ---
     // En diseños maximalistas, reemplazar el cursor del sistema integra al usuario en el lienzo.
     const cursor = document.getElementById("cursor");
-    const interactiveElements = document.querySelectorAll("a, button, .nav-item");
+    const interactiveElements = document.querySelectorAll("a, button, .nav-item, .toggle-btn, .chat-btn");
+
+    // Smooth cursor using transform + requestAnimationFrame for better perf
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let cursorX = mouseX;
+    let cursorY = mouseY;
+    const ease = 0.18;
 
     document.addEventListener("mousemove", (e) => {
-        // Usamos requestAnimationFrame implícito del navegador, pero transform es GPU-accelerated.
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
     });
 
+    function animateCursor() {
+        cursorX += (mouseX - cursorX) * ease;
+        cursorY += (mouseY - cursorY) * ease;
+        if (cursor) cursor.style.transform = `translate(${cursorX}px, ${cursorY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(animateCursor);
+    }
+    requestAnimationFrame(animateCursor);
+
     interactiveElements.forEach(el => {
-        el.addEventListener("mouseenter", () => cursor.classList.add("hovering"));
-        el.addEventListener("mouseleave", () => cursor.classList.remove("hovering"));
+        el.addEventListener("mouseenter", () => cursor && cursor.classList.add("hovering"));
+        el.addEventListener("mouseleave", () => cursor && cursor.classList.remove("hovering"));
     });
 
 
