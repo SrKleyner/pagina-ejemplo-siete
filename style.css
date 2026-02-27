@@ -28,6 +28,8 @@
     /* Metrics */
     --sidebar-collapsed: 80px;
     --sidebar-expanded: 280px;
+
+    
 }
 
 /* =========================================
@@ -273,6 +275,7 @@ body {
     display: flex;
     align-items: center;
     overflow: hidden;
+    
 }
 
 /* Specific layout for art-7: center image and related content cleanly */
@@ -441,7 +444,17 @@ body {
     height: 38px;
     max-width: auto;
     display: inline;
-}
-    /*.chat-btn i { font-size: 1.5rem; margin: 0; }*/
+    }
+
+    .section-maximalist {
+
+    /* CAMBIO CLAVE: Cambia la dirección a columna */
+    flex-direction: column; 
+    /* Alineación vertical (ahora controlada por justifyContent) */
+    justify-content: center; 
+    /* Alineación horizontal (ahora controlada por alignItems) */
+    align-items: center; 
+    overflow: hidden;
+    }
     
 }
