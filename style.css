@@ -151,7 +151,7 @@ body {
     width: var(--sidebar-expanded);
 }
 
-.toggle-btn {
+/*.toggle-btn {
     background: transparent;
     border: none;
     color: white;
@@ -161,6 +161,52 @@ body {
     text-align: left;
     display: flex;
     align-items: center;
+}*/
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+/* --- ESTO ES LO QUE BUSCABAS: Control del Icono --- */
+.icon-svg {
+  /* 1. TAMAÑO: Al ser vectores, mantienen la calidad */
+  width: 40px; 
+  height: 40px;
+
+  /* 2. COLOR: Usamos stroke para las líneas */
+  stroke: var(--color-primary); 
+
+  /* 3. GROSOR: Puedes hacer las líneas más finas o gruesas */
+  stroke-width: 3; 
+
+  /* 4. ACABADO: Bordes redondeados para que se vea profesional */
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  
+  /* Esto asegura que no haya rellenos extraños */
+  fill: none; 
+  
+  transition: stroke 0.3s ease;
+
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: rotate(-90deg) scale(0.8); }
+  to { opacity: 1; transform: rotate(0) scale(1); }
+}
+
+/* Efecto al pasar el mouse */
+.btn-icon:hover .icon-svg {
+  stroke: var(--color-primary-2); /* Cambia a verde al hacer hover */
+  transform: scale(1.2); /* Se agranda un poco */
 }
 
 .nav-links {

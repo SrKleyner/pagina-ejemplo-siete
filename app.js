@@ -10,13 +10,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // En diseños maximalistas, reemplazar el cursor del sistema integra al usuario en el lienzo.
     const cursor = document.getElementById("cursor");
     const interactiveElements = document.querySelectorAll("a, button, .nav-item, .toggle-btn, .chat-btn");
+    const sidebarIconBtn = document.getElementById("toggleSidebar")
 
     // Smooth cursor using transform + requestAnimationFrame for better perf
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
     let cursorX = mouseX;
     let cursorY = mouseY;
-    const ease = 0.18;
+    const ease = 0.22;
 
     document.addEventListener("mousemove", (e) => {
         mouseX = e.clientX;
@@ -41,6 +42,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const sidebar = document.getElementById("sidebar");
     const toggleBtn = document.getElementById("toggleSidebar");
     const navLinks = document.querySelectorAll(".nav-item");
+    // Definimos los strings con el código SVG
+    const iconoMenu = `
+        <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>`;
+
+    const iconoFlecha = `
+        <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5M5 12L12 19M5 12L12 5" />
+        </svg>`;
 
     toggleBtn.addEventListener("click", () => {
         sidebar.classList.toggle("expanded");
@@ -48,9 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // Cambiar el ícono entre hamburguesa y X
         const icon = toggleBtn.querySelector("i");
         if (sidebar.classList.contains("expanded")) {
-            icon.classList.replace("ph-list", "ph-x");
+            sidebarIconBtn.innerHTML = iconoFlecha; // Carga la flecha;
         } else {
-            icon.classList.replace("ph-x", "ph-list");
+            sidebarIconBtn.innerHTML = iconoMenu;   // Carga las 3 líneas
         }
     });
 
