@@ -30,6 +30,21 @@
     --sidebar-expanded: 280px;
 
     
+            /* Paleta de colores base de tu marca */
+            --color-1: #e91e64; /* Rosa */
+            --color-2: #2b0028; /* Morado Oscuro */
+            --color-3: #9100fb; /* Púrpura */
+            --color-4: #095efb; /* Azul */
+            --color-5: #68cc00; /* Verde */
+            --color-6: #f96000; /* Naranja */
+            /* Atenuación del 60% (rgba con 0.4 de opacidad o un color mezclado) */
+            --color-7: rgba(233, 30, 100, 0.4); /* Rosa atenuado */
+            
+            --text-color: #ffffff;
+            --bg-modal: rgba(43, 0, 40, 0.85); /* Basado en #2b0028 */
+
+
+
 }
 
 /* =========================================
@@ -49,6 +64,214 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+#roulette {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: transparent;
+    margin-left: 30px;
+}
+
+.roulette-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 400px; /* Tamaño máximo en escritorio */
+            margin: 20px auto;
+            text-align: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+/* El indicador (flecha) superior */
+        .pointer {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 30px solid var(--color-1); /* Color de la flecha */
+            z-index: 10;
+            filter: drop-shadow(0px 4px 2px rgba(0,0,0,0.3));
+        }
+/* Contenedor del Canvas para mantener proporción 1:1 */
+        .canvas-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Mantiene la ruleta redonda siempre */
+            border-radius: 50%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+            border: 8px solid white;
+            box-sizing: border-box;
+        }
+
+        /* El elemento canvas que girará */
+        #wheel {
+            width: 100%;
+            height: 100%;
+            display: block;
+            /* La transición es clave para el efecto de giro suave */
+            transition: transform 5s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        /* Botón para girar */
+        .spin-btn {
+            margin-top: 30px;
+            background-color: var(--color-1);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(233, 30, 100, 0.4);
+            transition: background-color 0.3s, transform 0.1s;
+            text-transform: uppercase;
+            width: 80%;
+            max-width: 250px;
+        }
+
+        .spin-btn:hover {
+            background-color: #c2185b;
+        }
+
+        .spin-btn:active {
+            transform: scale(0.95);
+        }
+
+        .spin-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* === ESTILOS DEL POP-UP (MODAL) === */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--bg-modal);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transform: translateY(-20px);
+            transition: transform 0.4s ease;
+            position: relative;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-content h2 {
+            color: var(--color-2);
+            margin-top: 0;
+            font-size: 2rem;
+        }
+
+        .modal-content p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .prize-name-display {
+            font-weight: bold;
+            color: var(--color-4);
+            font-size: 1.4rem;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .code-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0f0f0;
+            border: 2px dashed var(--color-3);
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 25px;
+        }
+
+        .code-string {
+            font-family: monospace;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-2);
+            letter-spacing: 2px;
+        }
+
+        .copy-btn {
+            background-color: var(--color-5);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: #52a300;
+        }
+
+        .close-btn {
+            background-color: transparent;
+            color: #999;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+
+        .close-btn:hover {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        
+        /* Pequeño mensaje de copiado con éxito */
+        .copy-msg {
+            display: block;
+            color: var(--color-5);
+            font-size: 0.9rem;
+            margin-top: -15px;
+            margin-bottom: 15px;
+            height: 15px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
 
 /* Grain Noise Overlay for Textural Depth */
 .noise-overlay {

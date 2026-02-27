@@ -1,121 +1,236 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Siete | Maximalist Experience</title>
-    
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://unpkg.com; img-src 'self' data: https:;">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
-    
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://unpkg.com; img-src 'self' data: https:;"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Unbounded:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="noise-overlay"></div>
 
     <div class="custom-cursor" id="cursor"></div>
 
     <header class="main-header">
-        <!-- Brand: imagen embebida y accesible -->
-        <div class="brand">
-            <img src="https://github.com/SrKleyner/image-siete/blob/main/LOGO_HORIZONTAL_ROSA.webp?raw=true" alt="Logo Siete" loading="lazy">
-        </div>
+      <!-- Brand: imagen embebida y accesible -->
+      <div class="brand">
+        <img
+          src="https://github.com/SrKleyner/image-siete/blob/main/LOGO_HORIZONTAL_ROSA.webp?raw=true"
+          alt="Logo Siete"
+          loading="lazy"
+        />
+      </div>
 
-        <button class="chat-btn" aria-label="Abrir Chat">
-            <!--<i class="ph ph-chat-teardrop-dots" aria-hidden="true"></i>-->
-            <svg id="Layer_1" data-name="Layer 1" class="chat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 112.92"><title>headset</title><path d="M15.31,87.55a20.54,20.54,0,0,0,1.23,4.65,12.43,12.43,0,0,0,2.75,4.26c3.88,3.85,8.92,3.84,14.44,3.84v0h2.62c2.27-3.27,7.6-5.56,13.8-5.56,8.27,0,15,4.07,15,9.1s-6.71,9.1-15,9.1c-6.07,0-11.3-2.2-13.65-5.36H33.73c-7.08,0-13.55,0-19.55-5.94A19.78,19.78,0,0,1,9.8,94.93,28.6,28.6,0,0,1,8,87.55a8.2,8.2,0,0,1-8-8.18V49.87a8.2,8.2,0,0,1,8.18-8.18h.58c1.48-15.15,11-27,23.87-34.09A61.85,61.85,0,0,1,57.37.2,58.06,58.06,0,0,1,83.32,3.87c14.45,5.71,26.56,17.84,31.25,37.82h.13a8.2,8.2,0,0,1,8.18,8.18v29.5a8.2,8.2,0,0,1-8.18,8.18h-8.18V42.41C102.33,26,92.29,16,80.38,11.32A50,50,0,0,0,58,8.18a53.66,53.66,0,0,0-21.49,6.39C25.37,20.75,17.24,31,16.58,44.05a4,4,0,0,1-.22,1.15V87.55Z"/></svg>
-            <span>Iniciar Chat</span>
-        </button>
+      <button class="chat-btn" aria-label="Abrir Chat">
+        <!--<i class="ph ph-chat-teardrop-dots" aria-hidden="true"></i>-->
+        <svg
+          id="Layer_1"
+          data-name="Layer 1"
+          class="chat-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 122.88 112.92"
+        >
+          <title>headset</title>
+          <path
+            d="M15.31,87.55a20.54,20.54,0,0,0,1.23,4.65,12.43,12.43,0,0,0,2.75,4.26c3.88,3.85,8.92,3.84,14.44,3.84v0h2.62c2.27-3.27,7.6-5.56,13.8-5.56,8.27,0,15,4.07,15,9.1s-6.71,9.1-15,9.1c-6.07,0-11.3-2.2-13.65-5.36H33.73c-7.08,0-13.55,0-19.55-5.94A19.78,19.78,0,0,1,9.8,94.93,28.6,28.6,0,0,1,8,87.55a8.2,8.2,0,0,1-8-8.18V49.87a8.2,8.2,0,0,1,8.18-8.18h.58c1.48-15.15,11-27,23.87-34.09A61.85,61.85,0,0,1,57.37.2,58.06,58.06,0,0,1,83.32,3.87c14.45,5.71,26.56,17.84,31.25,37.82h.13a8.2,8.2,0,0,1,8.18,8.18v29.5a8.2,8.2,0,0,1-8.18,8.18h-8.18V42.41C102.33,26,92.29,16,80.38,11.32A50,50,0,0,0,58,8.18a53.66,53.66,0,0,0-21.49,6.39C25.37,20.75,17.24,31,16.58,44.05a4,4,0,0,1-.22,1.15V87.55Z"
+          />
+        </svg>
+        <span>Iniciar Chat</span>
+      </button>
     </header>
 
     <nav class="sidebar" id="sidebar">
-        <button class="toggle-btn" id="toggleSidebar" aria-label="Alternar Menú">
-            <svg class="icon-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <line x1="4" y1="6" x2="20" y2="6" />
-                <line x1="4" y1="12" x2="20" y2="12" />
-                <line x1="4" y1="18" x2="20" y2="18" />
-            </svg>
-        </button>
-        <ul class="nav-links">
-            <li><a href="#art-7" class="nav-item"><i class="ph ph-planet"></i><span class="text">Inicio</span></a></li>
-            <li><a href="#art-1" class="nav-item"><i class="ph ph-planet"></i><span class="text">Génesis</span></a></li>
-            <li><a href="#art-2" class="nav-item"><i class="ph ph-aperture"></i><span class="text">Visión</span></a></li>
-            <li><a href="#art-3" class="nav-item"><i class="ph ph-flame"></i><span class="text">Impulso</span></a></li>
-            <li><a href="#art-4" class="nav-item"><i class="ph ph-drop"></i><span class="text">Fluidez</span></a></li>
-            <li><a href="#art-5" class="nav-item"><i class="ph ph-asterisk"></i><span class="text">Impacto</span></a></li>
-            <li><a href="#art-6" class="nav-item"><i class="ph ph-infinity"></i><span class="text">Legado</span></a></li>
-        </ul>
+      <button class="toggle-btn" id="toggleSidebar" aria-label="Alternar Menú">
+        <svg
+          class="icon-svg"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line x1="4" y1="6" x2="20" y2="6" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="18" x2="20" y2="18" />
+        </svg>
+      </button>
+      <ul class="nav-links">
+        <li>
+          <a href="#art-7" class="nav-item"
+            ><i class="ph ph-planet"></i><span class="text">Inicio</span></a
+          >
+        </li>
+        <li>
+          <a href="#art-1" class="nav-item"
+            ><i class="ph ph-planet"></i><span class="text">Génesis</span></a
+          >
+        </li>
+        <li>
+          <a href="#art-2" class="nav-item"
+            ><i class="ph ph-aperture"></i><span class="text">Visión</span></a
+          >
+        </li>
+        <li>
+          <a href="#art-3" class="nav-item"
+            ><i class="ph ph-flame"></i><span class="text">Impulso</span></a
+          >
+        </li>
+        <li>
+          <a href="#art-4" class="nav-item"
+            ><i class="ph ph-drop"></i><span class="text">Fluidez</span></a
+          >
+        </li>
+        <li>
+          <a href="#art-5" class="nav-item"
+            ><i class="ph ph-asterisk"></i><span class="text">Impacto</span></a
+          >
+        </li>
+        <li>
+          <a href="#art-6" class="nav-item"
+            ><i class="ph ph-infinity"></i><span class="text">Legado</span></a
+          >
+        </li>
+      </ul>
     </nav>
 
     <main class="content-wrapper">
+      <article id="art-7" class="section-maximalist">
+        <div class="jago-image reveal-up" aria-hidden="true">
+          <img
+            src="https://github.com/SrKleyner/image-siete/blob/main/Seg.vip_Homepage_640X459px.webp?raw=true"
+            alt="imagen de jago con traje"
+          />
+        </div>
+        <div class="content-box reveal-up">
+          <h2>
+            Se inteligente
+            <!--<br><span>Controlado</span>-->
+          </h2>
+          <p>Juega responsablemente.</p>
+          <div class="gradient-shape shape-pri-1"></div>
+        </div>
+      </article>
 
-        <article id="art-7" class="section-maximalist">
-            <div class="jago-image" aria-hidden="true"><img src="https://github.com/SrKleyner/image-siete/blob/main/Seg.vip_Homepage_640X459px.webp?raw=true" alt="imagen de jago con traje"></div>
-            <div class="content-box reveal-up">
-                <h2>Se inteligente <!--<br><span>Controlado</span>--></h2>
-                <p>Juega responsablemente.</p>
-                <div class="gradient-shape shape-pri-1"></div>
+      <article id="art-1" class="section-maximalist">
+        <div class="bg-number" aria-hidden="true">1</div>
+        <div class="content-box reveal-up">
+          <h2>Gira <br /><span>y gana</span></h2>
+          <p>
+            Al registrarte con nuestros bonos promocionales gratuitos tendras SIETE formas de ganar con siete no te lo pierdas!
+          </p>
+          <div class="gradient-shape shape-pri-1"></div>
+        </div>
+        <div id="roulette" class="roulette reveal-up" aria-hidden="true">
+          <!-- SECCIÓN HTML: Integra esto en la estructura de tu página -->
+          <div class="roulette-wrapper">
+            <div class="pointer"></div>
+            <div class="canvas-container">
+              <!-- El tamaño real interno del canvas (resolución). El CSS lo ajusta visualmente -->
+              <canvas id="wheel" width="500" height="500"></canvas>
             </div>
-        </article>
+            <button id="spin-btn" class="spin-btn">Girar y Ganar</button>
+          </div>
 
-        <article id="art-1" class="section-maximalist">
-            <div class="bg-number" aria-hidden="true">1</div>
-            <div class="content-box reveal-up">
-                <h2>El Caos <br><span>Controlado</span></h2>
-                <p>La simetría es la estética de los cobardes. En Siete, rompemos la cuadrícula para encontrar el equilibrio en la tensión visual.</p>
-                <div class="gradient-shape shape-pri-1"></div>
-            </div>
-        </article>
+          <!-- Modal para el premio -->
+          <div id="prize-modal" class="modal-overlay">
+            <div class="modal-content">
+              <h2>¡Felicidades!</h2>
+              <p>
+                Has ganado:
+                <span id="prize-name" class="prize-name-display">Premio</span>
+              </p>
+              <p>Usa este código en tu registro:</p>
 
-        <article id="art-2" class="section-maximalist right-align">
-            <div class="bg-number" aria-hidden="true">2</div>
-            <div class="content-box reveal-up delay-1">
-                <h2 class="text-gradient-sec-1">Abraza el <br>Vacío</h2>
-                <p>El espacio negativo no es espacio perdido; es silencio estructurado. Contrastamos la densidad extrema de nuestros gradientes con tipografías clásicas que exigen atención y respeto.</p>
-            </div>
-        </article>
+              <div class="code-box">
+                <span id="prize-code" class="code-string">XXXXXX</span>
+                <button id="copy-btn" class="copy-btn">Copiar</button>
+              </div>
+              <span id="copy-msg" class="copy-msg">¡Código copiado!</span>
 
-        <article id="art-3" class="section-maximalist grid-breaker">
-            <div class="bg-number" aria-hidden="true">3</div>
-            <div class="gradient-shape shape-sec-2"></div>
-            <div class="content-box reveal-up">
-                <h2>Cromatismo <br>Extremo</h2>
-                <p>Naranja tóxico y magenta profundo. Nos negamos a usar paletas tímidas. Cada color es una declaración de intenciones, una agresión calculada a los sentidos.</p>
+              <button id="close-btn" class="close-btn">
+                Cerrar y Continuar
+              </button>
             </div>
-        </article>
+          </div>
+        </div>
+      </article>
 
-        <article id="art-4" class="section-maximalist">
-            <div class="bg-number" aria-hidden="true">4</div>
-            <div class="content-box reveal-up delay-2">
-                <h2 class="text-gradient-sec-3">Fluidez <br>Dinámica</h2>
-                <p>El movimiento en el DOM no debe ser decorativo, debe contar una historia. Revelamos la información por capas, exigiendo al usuario que interactúe bajo nuestras reglas. asi es</p>
-            </div>
-        </article>
+      <article id="art-2" class="section-maximalist right-align">
+        <div class="bg-number" aria-hidden="true">2</div>
+        <div class="content-box reveal-up delay-1">
+          <h2 class="text-gradient-sec-1">Abraza el <br />Vacío</h2>
+          <p>
+            El espacio negativo no es espacio perdido; es silencio estructurado.
+            Contrastamos la densidad extrema de nuestros gradientes con
+            tipografías clásicas que exigen atención y respeto.
+          </p>
+        </div>
+      </article>
 
-        <article id="art-5" class="section-maximalist right-align">
-            <div class="bg-number" aria-hidden="true">5</div>
-            <div class="gradient-shape shape-pri-2"></div>
-            <div class="content-box reveal-up">
-                <h2>Impacto <br>Brutalista</h2>
-                <p>Escalas desproporcionadas. Elementos superpuestos. La web ha sido domesticada; nosotros le devolvemos su estado salvaje, ruidoso e impredecible.</p>
-            </div>
-        </article>
+      <article id="art-3" class="section-maximalist grid-breaker">
+        <div class="bg-number" aria-hidden="true">3</div>
+        <div class="gradient-shape shape-sec-2"></div>
+        <div class="content-box reveal-up">
+          <h2>Cromatismo <br />Extremo</h2>
+          <p>
+            Naranja tóxico y magenta profundo. Nos negamos a usar paletas
+            tímidas. Cada color es una declaración de intenciones, una agresión
+            calculada a los sentidos.
+          </p>
+        </div>
+      </article>
 
-        <article id="art-6" class="section-maximalist footer-art">
-            <div class="bg-number" aria-hidden="true">6</div>
-            <div class="content-box reveal-up">
-                <h2>El Fin <br><span>Es el Inicio</span></h2>
-                <p>Siete no termina aquí. La lectura vertical infinita es solo un vehículo para la persistencia del pensamiento. Has llegado al límite de la página, pero no del concepto.</p>
-                <button class="cta-massive">Explorar Siete</button>
-            </div>
-        </article>
+      <article id="art-4" class="section-maximalist">
+        <div class="bg-number" aria-hidden="true">4</div>
+        <div class="content-box reveal-up delay-2">
+          <h2 class="text-gradient-sec-3">Fluidez <br />Dinámica</h2>
+          <p>
+            El movimiento en el DOM no debe ser decorativo, debe contar una
+            historia. Revelamos la información por capas, exigiendo al usuario
+            que interactúe bajo nuestras reglas. asi es
+          </p>
+        </div>
+      </article>
+
+      <article id="art-5" class="section-maximalist right-align">
+        <div class="bg-number" aria-hidden="true">5</div>
+        <div class="gradient-shape shape-pri-2"></div>
+        <div class="content-box reveal-up">
+          <h2>Impacto <br />Brutalista</h2>
+          <p>
+            Escalas desproporcionadas. Elementos superpuestos. La web ha sido
+            domesticada; nosotros le devolvemos su estado salvaje, ruidoso e
+            impredecible.
+          </p>
+        </div>
+      </article>
+
+      <article id="art-6" class="section-maximalist footer-art">
+        <div class="bg-number" aria-hidden="true">6</div>
+        <div class="content-box reveal-up">
+          <h2>El Fin <br /><span>Es el Inicio</span></h2>
+          <p>
+            Siete no termina aquí. La lectura vertical infinita es solo un
+            vehículo para la persistencia del pensamiento. Has llegado al límite
+            de la página, pero no del concepto.
+          </p>
+          <button class="cta-massive">Explorar Siete</button>
+        </div>
+      </article>
     </main>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
