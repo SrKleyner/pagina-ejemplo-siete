@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
         sidebar.classList.toggle("expanded");
         
         // Cambiar el ícono entre hamburguesa y X
-        const icon = toggleBtn.querySelector("i");
         if (sidebar.classList.contains("expanded")) {
             sidebarIconBtn.innerHTML = iconoFlecha; // Carga la flecha;
         } else {
@@ -72,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", () => {
             if (window.innerWidth <= 768 && sidebar.classList.contains("expanded")) {
                 sidebar.classList.remove("expanded");
-                toggleBtn.querySelector("i").classList.replace("ph-x", "ph-list");
+                sidebarIconBtn.innerHTML = iconoMenu;
             }
         });
     });
