@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const formMsg = document.getElementById("form-msg");
 
   // ⚠️ ARQUITECTURA: Reemplaza esta constante con la URL que te de Google Apps Script
-  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyk2PKp1ADQALmVCcBJG25TKyorRlVNblX3kHPVxwDptrPxB943wSwb2rdbfAXx8EBi/exec";
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyk2PKp1ADQALmVCcBJG25TKyorRlVNblX3kHPVxwDptrPxB943wSwb2rdbfAXx8EBi/exec';
 
   registroForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       // (Este bloque IF es solo para que pruebes el UI antes de configurar Google Sheets)
-      /*if (GOOGLE_SCRIPT_URL === "URL_DE_TU_GOOGLE_APPS_SCRIPT") {
+      if (GOOGLE_SCRIPT_URL === "URL_DE_TU_GOOGLE_APPS_SCRIPT") {
         setTimeout(() => {
           formMsg.textContent = "¡Registro exitoso! (Modo de demostración)";
           formMsg.classList.add("msg-success");
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
           registroForm.reset();
         }, 1200);
         return;
-      }*/
+      }
 
       const result = await response.json();
 
