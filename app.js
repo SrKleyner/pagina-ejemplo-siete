@@ -135,6 +135,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("close-btn");
   const copyMsg = document.getElementById("copy-msg");
 
+  const inputCodigoPremio = document.getElementById('codigo_premio');
+
   // 3. Dibujar la ruleta en el Canvas
   function drawWheel() {
     const centerX = canvas.width / 2;
@@ -234,6 +236,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Copiar al portapapeles
   copyBtn.addEventListener("click", () => {
     const textToCopy = prizeCodeEl.textContent;
+
+    if(inputCodigoPremio) {
+      inputCodigoPremio.value = textToCopy;
+    }
 
     // Uso del API del Portapapeles con fallback
     if (navigator.clipboard && window.isSecureContext) {

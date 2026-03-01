@@ -3,12 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--<meta http-equiv="Content-Security-Policy" 
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com;">-->
+
     <title>Siete | Maximalist Experience</title>
 
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://unpkg.com; img-src 'self' data: https:;"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; script-src 'self' https://unpkg.com; img-src 'self' data: https:;"
     />
+
+    <!--<meta http-equiv="Content-Security-Policy" 
+    content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;">-->
+
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,9 +26,12 @@
       rel="stylesheet"
     />
 
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!--<script src="https://unpkg.com/@phosphor-icons/web"></script>-->
 
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style_form.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css">
+    
   </head>
   <body>
     <div class="noise-overlay"></div>
@@ -184,12 +196,43 @@
         <div class="bg-number" aria-hidden="true">3</div>
         <div class="gradient-shape shape-sec-2"></div>
         <div class="content-box reveal-up">
-          <h2>Cromatismo <br />Extremo</h2>
+          <h2>Empieza a <br />Ganar</h2>
           <p>
-            Naranja tóxico y magenta profundo. Nos negamos a usar paletas
-            tímidas. Cada color es una declaración de intenciones, una agresión
-            calculada a los sentidos.
+            es tu oportunidad de brillar, registrate y vive la emoción del juego.
           </p>
+        </div>
+        <!-- SECCIÓN HTML: FORMULARIO DE REGISTRO -->
+        <!-- Este formulario enviará datos a Google Sheets -->
+        <div class="form-wrapper">
+          <!-- CTA -->
+          <h2>¡Completa tu registro!</h2>
+        
+          <form id="registro-form">
+            <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <!-- Validación nativa de HTML5 para prevenir envíos vacíos -->
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej. Juan Pérez">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="tu@correo.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="telefono">Teléfono (Opcional)</label>
+                <!-- Type tel facilita el teclado numérico en móviles -->
+                <input type="tel" id="telefono" name="telefono" placeholder="+1 234 567 8900">
+            </div>
+
+            <div class="form-group">
+                <label for="codigo_premio">Código de Premio (Opcional)</label>
+                <input type="text" id="codigo_premio" name="codigo_premio" placeholder="Pega tu código aquí">
+            </div>
+            
+            <button type="submit" id="submit-btn" class="submit-btn">Enviar Datos</button>
+            <div id="form-msg" class="form-msg"></div>
+          </form>
         </div>
       </article>
 
@@ -233,5 +276,6 @@
     </main>
 
     <script src="app.js"></script>
+    <script src="app_form.js"></script>
   </body>
 </html>

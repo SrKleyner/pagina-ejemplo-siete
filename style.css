@@ -1,7 +1,48 @@
 /* =========================================
    VARIABLES & THEMING
    ========================================= */
+@font-face {
+        font-family: 'Bricolage-Grotesque';
+        src: url('./fonts/BricolageGrotesque-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    /* Declarar la variante negrita (usando el MISMO nombre de familia) */
+    @font-face {
+        font-family: 'Bricolagegrotesque';
+        src: url('./fonts/BricolageGrotesque-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    
+    @font-face {
+        font-family: 'Poppins';
+        src: url('./fonts/Poppins-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    /* Declarar la variante negrita (usando el MISMO nombre de familia) */
+    @font-face {
+        font-family: 'Poppins';
+        src: url('./fonts/Poppins-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
 :root {
+    /* Paleta aproximada basada en el PDF (neón / maximalista) */
+    /*--color-primary: #FF5A7A; /* rosa/neón */
+    /*--color-primary-2: #E91E64; /* fucsia profundo */
+    /*--color-accent-purple: #8A00FF; /* púrpura brillante */
+    /*--color-accent-cyan: #06A0FF; /* cian brillante */
+    /*--color-accent-orange: #FF8A00; /* naranja vibrante */
+    /*--color-deep: #2B0028; /* fondo oscuro profundo */
+
     /* Paleta aproximada basada en el PDF (neón / maximalista) */
     --color-primary: #FF5A7A; /* rosa/neón */
     --color-primary-2: #E91E64; /* fucsia profundo */
@@ -9,6 +50,7 @@
     --color-accent-cyan: #06A0FF; /* cian brillante */
     --color-accent-orange: #FF8A00; /* naranja vibrante */
     --color-deep: #2B0028; /* fondo oscuro profundo */
+    --color-primary-rgb: rgba(255, 90, 122, 0.30);
 
     /* Gradientes reutilizables */
     --pri-g1: linear-gradient(135deg, var(--color-primary), var(--color-primary-2));
@@ -20,10 +62,13 @@
     /* Backgrounds and text */
     --bg-dark: #050002;
     --text-main: #FCFCFC;
+
+    /*--bg-dark: #FCFCFC;
+    --text-main: #050002;*/
     
     /* Typography */
-    --font-display: 'Unbounded', sans-serif;
-    --font-body: 'Fraunces', serif;
+    --font-display: 'Bricolagegrotesque';
+    --font-body: 'Poppins', serif;
 
     /* Metrics */
     --sidebar-collapsed: 80px;
@@ -47,6 +92,10 @@
 
 }
 
+h2 {
+    font-weight: bold; /* Esto llamará automáticamente al archivo Bold que declaramos */
+}
+
 /* =========================================
    RESET & BASE (Maximalist Config)
    ========================================= */
@@ -65,7 +114,7 @@ body {
     position: relative;
 }
 #roulette {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font-body),'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -150,6 +199,7 @@ body {
             background-color: #ccc;
             cursor: not-allowed;
             box-shadow: none;
+
         }
 
         /* === ESTILOS DEL POP-UP (MODAL) === */
@@ -223,7 +273,7 @@ body {
         }
 
         .code-string {
-            font-family: monospace;
+            font-family: var(--font-body);
             font-size: 1.5rem;
             font-weight: bold;
             color: var(--color-2);
@@ -695,5 +745,12 @@ body {
     align-items: center; 
     overflow: hidden;
     }
+
+    .spin-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+
+        }
     
 }

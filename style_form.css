@@ -1,0 +1,106 @@
+ 
+ :root {
+            /* Paleta de colores base de tu marca */
+            --color-1: #e91e64; /* Rosa */
+            --color-2: #2b0028; /* Morado Oscuro */
+            --color-3: #9100fb; /* Púrpura */
+            --color-4: #095efb; /* Azul */
+            --color-5: #68cc00; /* Verde */
+            --color-6: #f96000; /* Naranja */
+            --color-7: rgba(233, 30, 100, 0.4); /* Rosa atenuado */
+            
+            --text-color: #ffffff;
+            --bg-modal: rgba(43, 0, 40, 0.85); /* Basado en #2b0028 */
+        }
+ .form-wrapper {
+            background: white;
+            max-width: 400px;
+            width: 100%;
+            margin: 20px auto 40px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            box-sizing: border-box;
+        }
+
+        .form-wrapper h2 {
+            color: var(--color-2); /* Morado Oscuro para el título */
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--color-2);
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            background-color: #fafafa;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--color-3); /* Púrpura para el focus */
+            background-color: #fff;
+            box-shadow: 0 0 0 4px rgba(145, 0, 251, 0.15);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--color-4); /* Azul para enviar */
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+            margin-top: 10px;
+            box-shadow: 0 4px 10px rgba(9, 94, 251, 0.3);
+        }
+
+        .submit-btn:hover {
+            background-color: #0747c2;
+            box-shadow: 0 6px 15px rgba(9, 94, 251, 0.4);
+        }
+
+        .submit-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        .form-msg {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            min-height: 20px;
+            transition: opacity 0.3s;
+        }
+
+        .msg-success { 
+            color: var(--color-5); 
+        } /* Verde éxito */
+        
+        .msg-error { 
+            color: var(--color-1); 
+        }   /* Rosa error */
